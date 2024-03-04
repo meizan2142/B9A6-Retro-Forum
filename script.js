@@ -45,14 +45,39 @@ const displayData = (everyPosts) => {
                 <img class="w-5 h-4" src="icon/download (9).png" alt="">
                 <p>${everyPost.posted_time} min</p>
                 <div>
-                    <img id="message" src="icon/download (10).png" alt="">
+                    <img onclick="message()" id="message" src="icon/download (10).png" alt="">
                 </div>
             </div>
         </div>
     </div>
         `
         discussSection.appendChild(discussCard);
-    })
+    });
+
+}
+
+let count = 0;
+const message = () => {
+    console.log('clicked');
+    const container = document.getElementById('add-text');
+    if (container) {
+        let markCount = count;
+        count += 1;
+        document.getElementById('mark-as-read-count').innerText = count;
+    }
+    
+    const newContainer = document.createElement('div');
+    newContainer.classList = `
+    flex justify-between bg-white rounded-lg mx-5 p-3 items-center
+    `;
+    newContainer.innerHTML = `
+    <p class="text-base font-medium">10 Kids Unaware of Their <br> Halloween Costume</p>
+    <div class="flex justify-between gap-2">
+        <img class="w-6 h-6 " src="icon/download (7).png" alt="">
+        <p>1,568</p>
+    </div>
+    `
+    container.appendChild(newContainer);
 }
 
 allPosts();
