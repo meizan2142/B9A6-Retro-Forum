@@ -21,9 +21,9 @@
             <div class="flex-none">
                 <ul class="menu menu-horizontal px-1 hidden lg:flex space-x-3 justify-center items-center list-none">
                     <li><a title="Home"><img class="w-5" src="icon/download.png" alt=""></a></li>
-                    <li><a title="Tooltip"><img class="w-5" src="icon/download (1).png" alt=""></a></li>
-                    <li><a title="User"><img class="w-5" src="icon/download (2).png" alt=""></a></li>
-                    <li><a title="Flag"><img class="w-5" src="icon/download (3).png" alt=""></a></li>
+                    <li><a title="Edit"><img class="w-5" src="icon/download (1).png" alt=""></a></li>
+                    <li><a title="Add"><img class="w-5" src="icon/download (2).png" alt=""></a></li>
+                    <li><a title="Flag"><img class="w-5 " src="icon/download (3).png" alt=""></a></li>
                     <div>
                         <button class="btn bg-[#797DFC] font-bold text-base rounded-full text-[#FFFFFF]">SignIn</button>
                 </ul>
@@ -32,7 +32,7 @@
                 <img class="w-8 inline lg:hidden" src="icon/download (4).png" alt="">
             </div>
         </div>
-        </div> 
+        </div>
 
         <!-- navbar ends here -->
 
@@ -67,7 +67,7 @@
                         meets modern discussions!</p>
                     <label class="input input-bordered flex items-center gap-2 rounded-full">
                         <input type="text" class="grow" placeholder="Search here anything" />
-                        <span class="badge bg-[#797DFC] py-4 px-5 font-bold text-base text-[#FFFFFF]">Search</span>
+                        <span onclick="searchBtn()" id="Search-btn" class="badge bg-[#797DFC] py-4 px-5 font-bold text-base text-[#FFFFFF]">Search</span>
                     </label>
                 </div>
             </div>
@@ -85,7 +85,8 @@
         <section class="mt-7 lg:mt-36">
             <div class="space-y-4 grid justify-center text-center">
                 <h1 class="font-black text-3xl lg:text-4xl">Let's Discuss</h1>
-                <p class="w-32 lg:w-[691px] lg:text-lg font-normal">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
+                <p class="w-32 lg:w-[691px] lg:text-lg font-normal">Yes, you can run unit tests and view the results
+                    directly within the app. The integrated testing features allow for a streamlined .
                 </p>
             </div>
         </section>
@@ -97,230 +98,10 @@
 
             <!-- Card starts from here -->
 
-            <section class="grid gap-6 mt-7 px-3 lg:px-0">
+            <section  class="grid gap-6 mt-7 px-3 lg:px-0">
 
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-side lg:w-[772px] lg:h-[220px] bg-[#F3F3F5] rounded-xl grid grid-cols-1 lg:flex gap-6 p-8 lg:p-6 ">
-                    <div class="rounded-full bg-[url('/icon/5e827e8046001.200w.png')] w-[50px] h-[50px] bg-cover flex justify-end">
-                        <div class="bg-[#10B981] w-3 h-3 rounded-full "></div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex font-medium gap-5">
-                            <p># Coding</p>
-                            <p>Author : Safia Chowdhury</p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-bold text-xl">
-                                10 Kids Unaware of Their Halloween Costume
-                            </p>
-                            <p class="text-gray-400">
-                                It’s one thing to subject yourself to ha Halloween costume mishap because, <br> hey that’s your prerogative
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="flex gap-6">
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (8).png" alt="">
-                                <p>1,568</p>
-                            </div>
-                            <div class="flex justify-center gap-2 items-center">
-                                <img class="w-5 h-4" src="icon/download (7).png" alt="">
-                                <p>560</p>
-                            </div>
-                            <div class="flex justify-between gap-8 items-center">
-                                <img class="w-5 h-4" src="icon/download (9).png" alt="">
-                                <p>5 min</p>
-                                <div>
-                                    <img id="message" src="icon/download (10).png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <section id="discuss-card" class="space-y-6">
+                </section>
 
             </section>
 
@@ -350,35 +131,35 @@
             </section>
         </section>
         <!-- Let's Discuss section ends here -->
-        
+
         <!-- Register section starts from here -->
-        
+
         <section class="mt-8 px-3 lg:px-0 text-[#FFFFFF]">
             <div class="hero  bg-[#12132D] rounded-xl p-3 lg:p-6">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img src="images/joinforum.png"
-                    class="max-w-sm rounded-lg shadow-2xl w-[288px] h-[241px]" />
+                    <img src="images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl w-[288px] h-[241px]" />
                     <div>
                         <h1 class="text-5xl font-bold">Join Our Forum</h1>
-                        <p class="py-6">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the results directly within the app. </p>
+                        <p class="py-6">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br>
+                            run unit tests and view the results directly within the app. </p>
                         <button class="btn bg-[#797DFC] border-none text-[#FFFFFF] rounded-full">Register Now</button>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Register section ends here -->
-        
+
         <section class="px-7 lg:px-0 mt-7 ">
             <section class="lg:mt-[100px]">
                 <div class="space-y-4 grid justify-center text-center">
                     <h1 class="font-black text-3xl lg:text-4xl">Latest Posts</h1>
                     <p class="w-32 lg:w-[691px] lg:text-lg font-normal">Yes, you can run unit tests and view the results
                         directly within the app. The integrated testing features allow for a streamlined.</p>
-                    </div>
+                </div>
             </section>
-                
-                <!-- card section starts from here -->
+
+            <!-- card section starts from here -->
             <section class="mt-10 lg:mt-12 grid grid-cols-1 lg:flex gap-3 lg:gap-5">
                 <div class="card lg:w-96 bg-base-100 shadow-xl p-2 lg:p-0">
                     <figure class="lg:px-10 lg:pt-10">
@@ -390,8 +171,10 @@
                             <p class="text-gray-400">29 January 2024</p>
                         </div>
                         <div>
-                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our daily life!!!</p>
-                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly within the app.</p>
+                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our
+                                daily life!!!</p>
+                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly
+                                within the app.</p>
                         </div>
                         <div class="flex gap-4">
                             <img class="w-[40px] h-[40px] rounded-full" src="icon/5e827e8046001.200w.png" alt="">
@@ -412,8 +195,10 @@
                             <p class="text-gray-400">29 January 2024</p>
                         </div>
                         <div>
-                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our daily life!!!</p>
-                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly within the app.</p>
+                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our
+                                daily life!!!</p>
+                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly
+                                within the app.</p>
                         </div>
                         <div class="flex gap-4">
                             <img class="w-[40px] h-[40px] rounded-full" src="icon/5e827e8046001.200w.png" alt="">
@@ -434,8 +219,10 @@
                             <p class="text-gray-400">29 January 2024</p>
                         </div>
                         <div>
-                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our daily life!!!</p>
-                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly within the app.</p>
+                            <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our
+                                daily life!!!</p>
+                            <p class="w-[209px] text-gray-400">Yes, you can run unit tests and view the results directly
+                                within the app.</p>
                         </div>
                         <div class="flex gap-4">
                             <img class="w-[40px] h-[40px] rounded-full" src="icon/5e827e8046001.200w.png" alt="">
@@ -446,7 +233,7 @@
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
             <!-- card section ends here -->
         </section>
 
@@ -495,9 +282,10 @@
         <aside>
             <p>2017, All Rights Reserved.</p>
         </aside>
-    </footer> 
+    </footer>
 
     <!-- footer section ends here -->
-
+<script src="script.js"></script>
 </body>
 
+</html>
