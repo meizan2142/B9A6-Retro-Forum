@@ -46,7 +46,7 @@ const displayData = (everyPosts) => {
                 <img class="w-5 h-4" src="icon/download (9).png" alt="">
                 <p>${everyPost.posted_time} min</p>
                 <div>
-                    <img onclick='message("${everyPost.title}", "${everyPost.view_count}")' id="message" src="icon/download (10).png" alt="">
+                    <img onclick='message("${everyPost.title.slice(0, 34)}", "${everyPost.view_count}")' id="message" src="icon/download (10).png" alt="">
                 </div>
             </div>
         </div>
@@ -55,6 +55,7 @@ const displayData = (everyPosts) => {
         discussSection.appendChild(discussCard);
     });
     
+    loadingSpinner(false);
 }
 
 
@@ -80,6 +81,7 @@ const message = (title,view_count) => {
         <p>${view_count}</p>
     </div>
     `
+    
     container.appendChild(newContainer);
 }
 
@@ -93,7 +95,20 @@ const loadLatestPost =async () => {
     const data = await response.json();
     const cardContainer = document.getElementById('card-container');
     data.forEach((item) => {
-    // console.log(item);
+        let authorName = '';
+        let authorPostedDate = '';
+        if (item.author.posted_date === undefined) {
+            authorName = 'No Publish Date';
+        }
+        else {
+            authorName = item.author.posted_date;
+        }
+        if (item.author.designation === undefined) {
+            authorPostedDate = 'Unknown';
+        }
+        else {
+            authorPostedDate = item.author.designation;
+        }
     const divOfCard = document.createElement('div');
     divOfCard.classList = `card lg:w-96 bg-base-100 shadow-xl p-2 lg:p-0`
     divOfCard.innerHTML = `
@@ -105,7 +120,7 @@ const loadLatestPost =async () => {
 <div class="card-body">
     <div class="flex gap-2">
         <img src="icon/download (5).png" alt="">
-        <p class="text-gray-400">${item.author.posted_date}</p>
+        <p id="date" class="text-gray-400">${authorName}</p>
     </div>
     <div>
         <p class="text-black font-bold w-[221px]">What will a mars habitat force that impact in our
@@ -117,12 +132,28 @@ const loadLatestPost =async () => {
         <img class="w-[40px] h-[40px] rounded-full" src="${item.profile_image}" alt="">
         <div>
             <p class="font-bold ">${item.author.name}</p>
-            <p class="text-gray-400">${item.author.designation}</p>
+            <p id="designation" class="text-gray-400">${authorPostedDate}</p>
         </div>
     </div>
 </div>
     `
     cardContainer.appendChild(divOfCard);
+    const posteDate = document.getElementById('date');
+    const authorDesignation = document.getElementById('designation');
+    // if (item.author.posted_date === undefined) {
+    //     // console.log('No Publish Date');
+    //     posteDate.innerText = "No Publish Date";
+    // }
+    // else {
+    //     console.log(item.author.posted_date);
+    // }
+    // if (item.author.designation === undefined) {
+    //     authorDesignation.innerText = "Unknown"
+    // }
+    // else {
+    //     // console.log('Valid');
+    //     console.log(item.author.designation);
+    // }
     })
 }
 
@@ -130,10 +161,11 @@ const loadLatestPost =async () => {
 const loadCategory =async () => {
     const inputField = document.getElementById('input-text');
     const searchText = inputField.value;
+    loadingSpinner(true);
     console.log(searchText);
     const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await response.json();
-    console.log(data.posts);
+    // console.log(data.posts);
     displayData(data.posts);
     // console.log('I am clicked');
     // data.posts.forEach((cate) => {
@@ -141,6 +173,39 @@ const loadCategory =async () => {
     // })
 }
 
+// const loadingSpinner = (isLoader) => {
+//     const loader = document.getElementById('loading-spinner');
+//     if (isLoader) {
+//         loader.classList.remove('hidden');
+//     }
+//     else{
+//         loader.classList.add('hidden');
+//     }
+//     setTimeout(function() {
+//         loader.style.display = 'none';
+//     }, 5000);
+// }
 
+const loadingSpinner = (isLoader) => {
+    const loader = document.getElementById('loading-spinner');
+    
+    if (isLoader) {
+        loader.classList.remove('hidden');
+    } else {
+        loader.classList.add('hidden');
+        // Clear any previously set timeout
+        // clearTimeout(loader.hideTimeout);
+    }
+    // loader.hideTimeout = setTimeout(function() {
+    //     loader.style.display = 'none';
+    // }, 2000);
+};
 
 loadLatestPost();
+
+
+
+
+
+
+
