@@ -9,6 +9,7 @@ const allPosts = async () => {
 const displayData = (everyPosts) => {
     const discussSection = document.getElementById('discuss-card');
     // console.log(everyPosts);
+    discussSection.innerHTML = '';
     everyPosts.forEach(everyPost => {
         // console.log(everyPost);
         const discussCard = document.createElement('div');
@@ -97,8 +98,8 @@ const loadLatestPost =async () => {
     divOfCard.classList = `card lg:w-96 bg-base-100 shadow-xl p-2 lg:p-0`
     divOfCard.innerHTML = `
     <figure class="lg:px-10 lg:pt-10">
-    <div class="w-[230px] lg:w-[326px] h-[150px] lg:h-[190px] grid bg-[#eeeef0] rounded-lg">
-        <img src="${item.cover_image}" alt="">
+    <div class="w-[230px] lg:w-[326px] h-[150px] lg:h-[202px] grid bg-[#eeeef0] rounded-lg">
+        <img class="rounded-xl" src="${item.cover_image}" alt="">
     </div>
 </figure>
 <div class="card-body">
@@ -130,34 +131,15 @@ const loadCategory =async () => {
     const inputField = document.getElementById('input-text');
     const searchText = inputField.value;
     console.log(searchText);
-    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${name}`);
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await response.json();
-    console.log(data.posts.category);
+    console.log(data.posts);
+    displayData(data.posts);
     // console.log('I am clicked');
     // data.posts.forEach((cate) => {
     //     console.log(cate.category);
     // })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
