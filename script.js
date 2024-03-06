@@ -17,7 +17,7 @@ const displayData = (everyPosts) => {
         discussCard.innerHTML = `
         <div class="flex">
         <img class="w-[50px] h-[50px] rounded-xl" src="${everyPost.image}" alt="">
-        <div class="bg-[#10B981] w-3 h-3 mr-10 rounded-full"></div>
+        <div  class=" w-3 h-3 mr-10 rounded-full ${everyPost.isActive ? "bg-green-500" : "bg-red-600"}"></div>
         </div>
     <div class="space-y-3">
         <div class="flex font-medium gap-5">
@@ -81,7 +81,6 @@ const message = (title,view_count) => {
         <p>${view_count}</p>
     </div>
     `
-    
     container.appendChild(newContainer);
 }
 
@@ -138,22 +137,6 @@ const loadLatestPost =async () => {
 </div>
     `
     cardContainer.appendChild(divOfCard);
-    const posteDate = document.getElementById('date');
-    const authorDesignation = document.getElementById('designation');
-    // if (item.author.posted_date === undefined) {
-    //     // console.log('No Publish Date');
-    //     posteDate.innerText = "No Publish Date";
-    // }
-    // else {
-    //     console.log(item.author.posted_date);
-    // }
-    // if (item.author.designation === undefined) {
-    //     authorDesignation.innerText = "Unknown"
-    // }
-    // else {
-    //     // console.log('Valid');
-    //     console.log(item.author.designation);
-    // }
     })
 }
 
@@ -167,24 +150,8 @@ const loadCategory =async () => {
     const data = await response.json();
     // console.log(data.posts);
     displayData(data.posts);
-    // console.log('I am clicked');
-    // data.posts.forEach((cate) => {
-    //     console.log(cate.category);
-    // })
 }
 
-// const loadingSpinner = (isLoader) => {
-//     const loader = document.getElementById('loading-spinner');
-//     if (isLoader) {
-//         loader.classList.remove('hidden');
-//     }
-//     else{
-//         loader.classList.add('hidden');
-//     }
-//     setTimeout(function() {
-//         loader.style.display = 'none';
-//     }, 5000);
-// }
 
 const loadingSpinner = (isLoader) => {
     const loader = document.getElementById('loading-spinner');
